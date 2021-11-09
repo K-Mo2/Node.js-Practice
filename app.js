@@ -1,5 +1,6 @@
+const chalk = require("chalk");
 // const getNotes = require("./notes");
-const validator = require("validator");
+// const validator = require("validator");
 // const fs = require("fs");
 // fs.writeFileSync("notes.txt", "This is writen by node\n");
 
@@ -7,8 +8,12 @@ const validator = require("validator");
 
 //  getNotes("these are my notes");
 
-console.log(validator.isEmail("example@example.com"));
-console.log(validator.isURL("www.exampleexample.com"));
+// console.log(validator.isEmail("example@example.com"));
+// console.log(validator.isURL("www.exampleexample.com"));
 
-console.log(validator.isEmail("exampleexample.com"));
-console.log(validator.isURL("wwwexampleexample"));
+// console.log(validator.isEmail("exampleexample.com"));
+// console.log(validator.isURL("wwwexampleexample"));
+
+const log = console.log;
+
+log(chalk.green("Success"));
