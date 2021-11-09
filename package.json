@@ -19,7 +19,8 @@
   "homepage": "https://github.com/K-Mo2/Node.js-Practice#readme",
   "dependencies": {
     "chalk": "^4.1.2",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "yargs": "^17.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

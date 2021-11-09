@@ -1,19 +1,39 @@
-const chalk = require("chalk");
-// const getNotes = require("./notes");
-// const validator = require("validator");
-// const fs = require("fs");
-// fs.writeFileSync("notes.txt", "This is writen by node\n");
+const yargs = require("yargs");
 
-// fs.appendFileSync("notes.txt", "This is line is appended by node");
+console.log(process.argv);
 
-//  getNotes("these are my notes");
+yargs.version("1.1.0");
 
-// console.log(validator.isEmail("example@example.com"));
-// console.log(validator.isURL("www.exampleexample.com"));
+yargs.command({
+  command: "add",
+  description: "adding a new note",
+  handler: function () {
+    console.log("Adding a new note");
+  },
+});
 
-// console.log(validator.isEmail("exampleexample.com"));
-// console.log(validator.isURL("wwwexampleexample"));
+yargs.command({
+  command: "remove",
+  description: "removing a note",
+  handler: function () {
+    console.log("Removing a note");
+  },
+});
 
-const log = console.log;
+yargs.command({
+  command: "list",
+  description: "Listing notes",
+  handler: function () {
+    console.log("Listing notes");
+  },
+});
 
-log(chalk.green("Success"));
+yargs.command({
+  command: "read",
+  description: "Reading notes",
+  handler: function () {
+    console.log("Reading notes");
+  },
+});
+
+console.log(yargs.argv);
