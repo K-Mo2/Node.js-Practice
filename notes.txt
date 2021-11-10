@@ -1,2 +1,0 @@
-This is writen by node
-This is line is appended by node
