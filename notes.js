@@ -6,34 +6,35 @@ const getNotes = function (notes) {
 };
 
 const addNotes = function (title, body) {
-  const notes = fs.readFileSync("notes.json").toString();
+  const notes = loadNotes();
 
-  if (!notes) {
-    const noteData = [{ title: title, body: body }];
-    const noteJSON = JSON.stringify(noteData);
-    fs.writeFileSync("notes.json", noteJSON);
-  }
+  const duplicateNote = notes.some((note) => note.title === title);
 
-  if (notes) {
-    const notesObj = JSON.parse(notes);
-
-    const noteMatch = notesObj.some((note) => note.title === title);
-
-    console.log(noteMatch);
-
-    if (noteMatch) {
-      console.log("This note already exists");
-      return;
-    }
-    notesObj.push({
+  if (duplicateNote) {
+    console.log("Note title is taken");
+    return;
+  } else {
+    notes.push({
       title: title,
       body: body,
     });
-
-    const noteObjJSON = JSON.stringify(notesObj);
-
-    fs.writeFileSync("notes.json", noteObjJSON);
+    saveNotes(notes);
+    console.log("Note added");
   }
 };
 
+const saveNotes = function (note) {
+  const noteJSON = JSON.stringify(note);
+  fs.writeFileSync("notes.json", noteJSON);
+};
+
+const loadNotes = function () {
+  try {
+    const notes = fs.readFileSync("notes.json").toString();
+    const notesObj = JSON.parse(notes);
+    return notesObj;
+  } catch (error) {
+    return [];
+  }
+};
 module.exports = { getNotes, addNotes };
