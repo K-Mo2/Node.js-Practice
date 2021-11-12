@@ -8,10 +8,6 @@
 
 \*[Skills practised](#skills-practised)
 
-\*[Launch method](#launch-method)
-
-\*[How to use ?](#How-to-use-?)
-
 ### Overview
 
 This is a Note taking app to practice the core concepts of Node.js
@@ -20,13 +16,27 @@ This is a Note taking app to practice the core concepts of Node.js
 
 1- Node.js
 
-2- command-line
+2- Express
 
-3- npm
+3- NPM
 
-4- JSON
+4- Nodemon
 
 5- ES6
+
+6- Git
+
+7- Github
+
+8- Yargs package
+
+9- Validator package
+
+10- Chalk package
+
+11- Command-line
+
+12- Node local packages
 
 ## Skills practised
 
@@ -49,48 +59,3 @@ This is a Note taking app to practice the core concepts of Node.js
 9- Storing data with JSON
 
 10- ES6 Arrow function
-
-### Launch method
-
-To run the project:
-
-1- Install Node.js
-
-2- Download or clone the project.
-
-3- Open the terminal in project directory.
-
-4- Run the following commands in the terminal.
-
-```
-npm install
-
-```
-
-### How to use the app ?
-
-Open the terminal in the project directory and run any of these commands
-
-1- To add a note run the following command and provide the Note data within the quotation mark
-
-```
-node app add --title="Enter note title here" --body="Enter note body here"
-```
-
-2- To remove a note run the following command and provide the Note data within the quotation mark
-
-```
-node app remove --title="Note title to remove"
-```
-
-3- To list all the notes you have run the following command
-
-```
-node app list
-```
-
-4- To read a specific note you have
-
-```
-node app read --title="the note title to read"
-```
